@@ -1,12 +1,14 @@
+import { Link, Outlet } from 'react-router-dom'
 import './App.css'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-     <div className='font-poppins'>
-       <h1 className='text-3xl p-2 font-bold'>Hi! I am Developer</h1>
-     </div>
+     <Navbar/>
+     <Outlet/>
+     <footer>Footer</footer>
     </>
   )
 }
