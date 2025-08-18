@@ -1,9 +1,18 @@
 import React from 'react';
+import Products from './Products';
 
 const Shop = () => {
     return (
         <div>
-            <h1>This Is Shop</h1>
+            <section className='min-h-screen'>
+                {/* banner */}
+                <div className='w-full h-[400px] bg-cover bg-center flex items-center justify-center text-white' style={{
+                backgroundImage: `url("https://i.ibb.co.com/4ZLctFZf/banner.png")`,
+                }}>
+                    <h1 className=' text-4xl font-bold'>Shop Our Products</h1>
+                </div>
+                <Products headline="What's Your Choise"/>
+            </section>
         </div>
     );
 };
