@@ -9,7 +9,7 @@ const Shop = () => {
                 <div className='w-full h-[400px] bg-cover bg-center flex items-center justify-center text-white' style={{
                 backgroundImage: `url("https://i.ibb.co.com/4ZLctFZf/banner.png")`,
                 }}>
-                    <h1 className=' text-4xl font-bold'>Shop Our Products</h1>
+                    <h1 className=' text-3xl md:text-4xl font-bold pb-4'>Shop Our Products</h1>
                 </div>
                 <Products headline="What's Your Choise"/>
             </section>
