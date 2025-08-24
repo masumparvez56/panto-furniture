@@ -16,3 +16,5 @@ body {
 .section-container{
   @apply container max-w-screen-xl mx-auto py-6 px-4;
 }
+
+
