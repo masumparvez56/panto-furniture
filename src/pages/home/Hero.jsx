@@ -1,7 +1,12 @@
 import React from 'react';
+import { useContext } from 'react';
+import { BsMoon, BsSun } from 'react-icons/bs';
 import { FaSearch } from 'react-icons/fa';
+import { ThemeContext } from '../../context/ThemeContext';
 
 const Hero = () => {
+    const {isDarkMode, toggleTheme} = useContext(ThemeContext);
+
     return (
         <section
             className="h-screen px-2 relative bg-cover bg-center text-white"
@@ -31,7 +36,18 @@ const Hero = () => {
             </div>
 
             {/* bottom blur effect */}
-            <div className='absolute inset-x-0 bottom-0 h-3/4 xl:h-3/5 -mb-2 lg:-mb-3 xl:-mb-5 bg-gradient-to-t from-white/80 xl:from-white/90 via-transparent to-transparent blur-sm lg:blur-md'/>
+            <div className='absolute inset-x-0 bottom-0 h-3/4 xl:h-3/5 dark:h-3/6 -mb-2 dark:-mb-0.5 lg:-mb-3 bg-gradient-to-t from-white/80 xl:from-white/90 via-transparent to-transparent blur-sm lg:blur-md'/>
+
+            {/* dark and light color switcher */}
+            <div className='absolute bottom-7 right-7 sm:bottom-9 sm:right-9 md:bottom-11 md:right-11 lg:bottom-20 lg:right-20 z-40'>
+                <button
+                onClick={toggleTheme}
+                className='focus:outline-none font-bold text-sm md:text-lg p-3 lg:p-4 xl:p-5 bg-black rounded-full'>
+                  {
+                    isDarkMode ? <BsSun className='text-yellow-300'/> : <BsMoon className='text-yellow-300'/>
+                  }  
+                </button>
+            </div>
         </section>
     );
 };

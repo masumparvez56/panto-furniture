@@ -1,7 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from "react";
 import { Link, NavLink } from 'react-router';
 import { FaBars, FaCartShopping } from "react-icons/fa6";
 import { FaTimes } from "react-icons/fa";
+import { CartContext } from "./../context/CartContext";
 
 const navItems = [
     { path: "/", label: "Furniture" },
@@ -41,6 +42,7 @@ const Navbar = () => {
         setIsMenuOpen(prevState => !prevState);
     };
 
+    // when scroll, apply bg color to navbar
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) {
@@ -54,6 +56,9 @@ const Navbar = () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
+    // cart items from context
+    const {cartCount} = useContext(CartContext);
 
     return (
         <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out ${isScrolled ? "bg-white shadow-md text-black" : "bg-transparent text-white"}`}>
@@ -82,7 +87,7 @@ const Navbar = () => {
                 {/* cart icon */}
                 <div className='hidden md:block cursor-pointer relative'>
                     <FaCartShopping className='text-xl' />
-                    <sup className='absolute -top-1 -right-2 bg-primary text-white w-4 h-4 rounded-full flex items-center justify-center text-xs'>0</sup>
+                    <sup className='absolute -top-1 -right-2 bg-primary text-white w-4 h-4 rounded-full flex items-center justify-center text-xs'>{cartCount}</sup>
                 </div>
             </nav>
         </header>
