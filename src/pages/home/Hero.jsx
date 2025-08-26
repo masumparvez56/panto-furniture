@@ -39,10 +39,10 @@ const Hero = () => {
             <div className='absolute inset-x-0 bottom-0 h-3/4 xl:h-3/5 dark:h-3/6 -mb-2 dark:-mb-0.5 lg:-mb-3 bg-gradient-to-t from-white/80 xl:from-white/90 via-transparent to-transparent blur-sm lg:blur-md'/>
 
             {/* dark and light color switcher */}
-            <div className='absolute bottom-7 right-7 sm:bottom-9 sm:right-9 md:bottom-11 md:right-11 lg:bottom-20 lg:right-20 z-40'>
+            <div className='absolute bottom-6 right-6 sm:bottom-8 sm:right-8 md:bottom-10 md:right-10 lg:bottom-16 lg:right-16 z-40'>
                 <button
                 onClick={toggleTheme}
-                className='focus:outline-none font-bold text-sm md:text-lg p-3 lg:p-4 xl:p-5 bg-black rounded-full'>
+                className='focus:outline-none font-bold text-sm md:text-lg p-3 lg:p-4 bg-black rounded-full'>
                   {
                     isDarkMode ? <BsSun className='text-yellow-300'/> : <BsMoon className='text-yellow-300'/>
                   }  
